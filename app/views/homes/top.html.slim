@@ -1,2 +1,6 @@
-h1 Homes#top
-p Find me in app/views/homes/top.html.slim
+.container
+  h1.text-center RAlly
+  .text-center.mt-5
+    = link_to 'ログイン', new_shop_session_path, class: 'btn btn-outline-dark'
+  .text-center.mt-3
+    = link_to '新規登録', new_shop_registration_path, class: 'btn btn-outline-dark'

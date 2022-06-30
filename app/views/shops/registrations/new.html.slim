@@ -1,0 +1,28 @@
+.text-center
+  h2 新規登録
+  = form_with model: @shop, url: shop_registration_path, local: true do |f|
+    = render "shops/shared/error_messages", resource: resource
+    .field
+      = f.label :店舗名, class: 'mt-3'
+      br
+      = f.text_field :shop_name, autofocus: true, autocomplete: 'shop_name', class: 'devise-form rounded border-0'
+    .field
+      = f.label :メールアドレス, class: 'mt-3'
+      br
+      = f.email_field :email, autofocus: true, autocomplete: "email", class: 'devise-form rounded border-0'
+    .field
+      = f.label :パスワード, class: 'mt-3'
+      - if @minimum_password_length
+        em
+          | (
+          = @minimum_password_length
+          |  characters minimum)
+      br
+      = f.password_field :password, autocomplete: "new-password", class: 'devise-form rounded border-0'
+    .field
+      = f.label :パスワード（確認）, class: ' mt-3'
+      br
+      = f.password_field :password_confirmation, autocomplete: "new-password", class: 'devise-form rounded border-0'
+    .actions
+      = f.submit "登録", class: "mt-5 btn btn-outline-dark"
+  / = render "shops/shared/links"
