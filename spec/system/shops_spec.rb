@@ -5,6 +5,7 @@ require 'rails_helper'
       before do
         visit shop_path(1)
       end
+
       context '未ログインでshopの詳細ページにアクセスした時' do
         it 'ログインページにリダイレクトされる' do
           expect(page).to have_current_path new_shop_session_path
@@ -21,15 +22,18 @@ require 'rails_helper'
         fill_in 'shop_password', with: 'password'
         click_button 'ログイン'
       end
+
       context 'ショップAでログインする' do
         it 'ユーザーAのshowページが表示される' do
           expect(page).to have_current_path shop_path(Shop.first)
         end
       end
+
       context 'ショップAでログインしショップBのshowページにアクセス' do
         before do
           visit shop_path(Shop.second)
         end
+
         it 'ユーザーAのshowページが表示される' do
           expect(page).to have_current_path shop_path(Shop.first)
         end
