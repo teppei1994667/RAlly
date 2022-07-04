@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     sessions: 'shops/sessions'
   }
   resources :shops, :only => [:show]
+  resources :order_stores
 end
