@@ -11,8 +11,6 @@ class ShopsController < ApplicationController
   private
   def person_only_inaccessible
     @shop = Shop.find(params[:id])
-    unless @shop == current_shop
-      redirect_to shop_path(current_shop)
-    end
+    redirect_to shop_path(current_shop) unless @shop == current_shop
   end
 end
