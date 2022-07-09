@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :order_store do
-    shop { nil }
     name { "MyString" }
+    shop
   end
 end

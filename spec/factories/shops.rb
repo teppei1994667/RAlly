@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :shop do
     shop_name { 'テストショップ' }
-    email { 'test1@example.com' }
+    email { Faker::Internet.free_email }
     password { 'password' }
   end
 end
