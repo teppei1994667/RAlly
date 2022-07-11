@@ -1,2 +1,6 @@
-h1 OrderStores#new
-p Find me in app/views/order_stores/new.html.slim
+.text-center
+  h1= @shop.shop_name
+  = link_to '戻る', new_shop_order_store_path(current_shop), class: "mt-5 btn btn-outline-dark"
+  p.mt-5 新規登録
+  
+
