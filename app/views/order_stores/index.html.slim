@@ -1,3 +1,6 @@
 .text-center
   h1= @shop.shop_name
-  = link_to '発注先の追加', new_shop_order_store_path(current_shop), class: "mt-5 btn btn-outline-dark"
+  .
+    = link_to '発注先の追加', new_shop_order_store_path(current_shop), class: "mt-5 btn btn-outline-dark"
+  .
+    = link_to '戻る', shop_path(current_shop), class: "mt-5 btn btn-outline-dark"
