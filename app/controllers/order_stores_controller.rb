@@ -15,8 +15,13 @@ class OrderStoresController < ApplicationController
   def create
     order_store = OrderStore.new(order_store_params)
     order_store.shop = current_shop
-    order_store.save!
-    redirect_to shop_order_stores_path(current_shop)
+    if order_store.save
+      redirect_to shop_order_stores_path(current_shop)
+    else
+      @shop = current_shop
+      @order_store = OrderStore.new
+      render :new
+    end
   end
 
   def edit
