@@ -1,7 +1,7 @@
 class OrderStoresController < ApplicationController
   def index
     @shop = current_shop
-    @order_stores = OrderStore.all
+    @order_stores = current_shop.order_stores
   end
 
   def show
@@ -15,6 +15,7 @@ class OrderStoresController < ApplicationController
   def create
     order_store = OrderStore.new(order_store_params)
     order_store.shop = current_shop
+    
     if order_store.save
       redirect_to shop_order_stores_path(current_shop)
     else
