@@ -1,6 +1,5 @@
 class OrderStoresController < ApplicationController
   def index
-    @shop = current_shop
     @order_stores = current_shop.order_stores
   end
 
@@ -9,7 +8,6 @@ class OrderStoresController < ApplicationController
   end
 
   def new
-    @shop = current_shop
     @order_store = OrderStore.new
   end
 
@@ -27,6 +25,17 @@ class OrderStoresController < ApplicationController
   end
 
   def edit
+    @order_store = OrderStore.find(params[:id])
+  end
+
+  def update
+    @order_store = OrderStore.find(params[:id])
+    if @order_store.update(order_store_params)
+      redirect_to shop_order_stores_path(current_shop)
+    else
+      @order_store = OrderStore.find(params[:id])
+      render :edit
+    end
   end
 
   private

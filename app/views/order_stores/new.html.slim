@@ -1,12 +1,11 @@
-.text-center
+.text-center.container
   h1= @shop.shop_name
-  .container
-    = form_with model: [@shop, @order_store], local: true do |f|
-      .form-group
-        = f.label :新しい発注先, class: 'h4 mt-5'
-        = f.text_field :name, class: 'form-control mt-5'
+  = form_with model: [current_shop, @order_store], local: true do |f|
+    .form-group
+      = f.label :新しい発注先, class: 'h4 mt-5'
+      = f.text_field :name, class: 'form-control mt-5'
 
-      = f.submit :登録, class: 'btn btn-outline-dark mt-5'
+    = f.submit :登録, class: 'btn btn-outline-dark mt-5'
 
-    = link_to '戻る', shop_order_stores_path(current_shop), class: "mt-5 btn btn-outline-dark"
+  = link_to '戻る', shop_order_stores_path(current_shop), class: "mt-5 btn btn-outline-dark"
 

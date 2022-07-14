@@ -1,5 +1,5 @@
 .container.text-center
-  = link_to @shop.shop_name, shop_path(current_shop), class: "h1 no-underline"
+  = link_to current_shop.shop_name, shop_path(current_shop), class: "h1 no-underline"
   .
     = link_to '発注先の追加', new_shop_order_store_path(current_shop), class: "mt-5 btn btn-outline-dark"
   .mt-3.text

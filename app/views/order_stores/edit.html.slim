@@ -1,2 +1,8 @@
-h1 OrderStores#edit
-p Find me in app/views/order_stores/edit.html.slim
+.text-center.container
+  = form_with model: [current_shop, @order_store], local: true do |f|
+    .form-group
+      = f.text_field :name, class: 'form-control mt-5'
+
+    = f.submit :変更, class: 'btn btn-outline-dark mt-5'
+
+  = link_to '戻る', shop_order_stores_path(current_shop), class: "mt-5 btn btn-outline-dark"
