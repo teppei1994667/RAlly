@@ -1,5 +1,5 @@
 .text-center.container
-  h1= @shop.shop_name
+  h1= current_shop.shop_name
   = form_with model: [current_shop, @order_store], local: true do |f|
     .form-group
       = f.label :新しい発注先, class: 'h4 mt-5'

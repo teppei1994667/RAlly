@@ -38,6 +38,12 @@ class OrderStoresController < ApplicationController
     end
   end
 
+  def destroy
+    order_store = OrderStore.find(params[:id])
+    order_store.destroy
+    redirect_to shop_order_stores_path(current_shop)
+  end
+
   private
 
   def order_store_params
