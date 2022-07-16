@@ -10,7 +10,7 @@ describe 'Home画面アクセス', type: :system do
       visit root_path
     end
 
-    context '未ログインでHome画面にアクセスsuru
+    context '未ログインでHome画面にアクセスする'
     ' do
       it '正常にアクセスされる' do
         expect(page).to have_current_path root_path
