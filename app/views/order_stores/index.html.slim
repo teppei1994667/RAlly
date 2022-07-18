@@ -1,0 +1,13 @@
+.container.text-center
+  = link_to current_shop.shop_name, shop_path(current_shop), class: "h1 no-underline"
+  .
+    = link_to '発注先の追加', new_shop_order_store_path(current_shop), class: "mt-5 btn btn-outline-dark"
+  .mt-3.text
+    table.table.table-hover
+      tbody
+        - @order_stores.each do |order_store|
+          tr
+            td= link_to order_store.name, shop_order_store_path(current_shop, order_store.id), class: 'text-black'
+    
+  .
+    = link_to '戻る', shop_path(current_shop), class: "mt-5 btn btn-outline-dark"

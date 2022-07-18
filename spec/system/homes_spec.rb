@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'Home画面アクセス', type: :system do
   before do
-    userA = FactoryBot.create(:shop, shop_name: 'ショップA', email: 'a@example.com')
+    @user_a = FactoryBot.create(:shop, shop_name: 'ショップA', email: 'a@example.com')
   end
 
   describe 'Home画面表示' do
@@ -10,8 +10,7 @@ describe 'Home画面アクセス', type: :system do
       visit root_path
     end
 
-    context '未ログインでHome画面にアクセスsuru
-    ' do
+    context '未ログインでHome画面にアクセスする' do
       it '正常にアクセスされる' do
         expect(page).to have_current_path root_path
       end
@@ -37,7 +36,7 @@ describe 'Home画面アクセス', type: :system do
     end
 
     it 'ログインしているshopのshowページにリダイレクトする' do
-      expect(page).to have_current_path shop_path(Shop.first)
+      expect(page).to have_current_path shop_path(@user_a)
     end
   end
 end

@@ -1,2 +1,12 @@
 @import "bootstrap";
 @import "homes";
+@import "order_stores";
+
+a {
+  text-decoration: none !important;
+  color: black;
+}
+
+a:hover {
+  color: black;
+}

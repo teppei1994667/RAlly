@@ -1,0 +1,6 @@
+.container.text-center
+  h1= @order_store.name
+  .
+    = link_to "設定", edit_shop_order_store_path(current_shop, @order_store), class: "btn btn-outline-dark"
+  .
+    = link_to "戻る", shop_order_stores_path(current_shop), class: "btn btn-outline-dark"

@@ -5,5 +5,7 @@ Rails.application.routes.draw do
     registrations: 'shops/registrations',
     sessions: 'shops/sessions'
   }
-  resources :shops, :only => [:show]
+  resources :shops, :only => [:show] do
+    resources :order_stores
+  end
 end

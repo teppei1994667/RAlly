@@ -1,0 +1,10 @@
+.text-center.container
+  = form_with model: [current_shop, @order_store], local: true do |f|
+    .form-group
+      = f.text_field :name, class: 'form-control mt-5'
+
+    = f.submit :変更, class: 'btn btn-outline-dark mt-5'
+  = link_to '削除', shop_order_store_path(current_shop, @order_store), method: :delete, 
+                    data: { confirm: "#{@order_store.name}を削除します。よろしいですか？" },
+                    class: "mt-5 btn btn-outline-dark"
+  = link_to '戻る', shop_order_stores_path(current_shop), class: "mt-5 btn btn-outline-dark"
