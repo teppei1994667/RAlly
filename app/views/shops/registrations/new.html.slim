@@ -18,11 +18,11 @@
           = @minimum_password_length
           |  characters minimum)
       br
-      = f.password_field :password, autocomplete: "new-password", class: 'devise-form rounded border-0'
+      = f.text_field :password, autocomplete: "new-password", class: 'devise-form rounded border-0'
     .field
       = f.label :パスワード（確認）, class: ' mt-3'
       br
-      = f.password_field :password_confirmation, autocomplete: "new-password", class: 'devise-form rounded border-0'
+      = f.text_field :password_confirmation, autocomplete: "new-password", class: 'devise-form rounded border-0'
     .actions
       = f.submit "登録", class: "mt-5 btn btn-outline-dark"
   / = render "shops/shared/links"
